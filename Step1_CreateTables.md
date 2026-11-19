@@ -29,9 +29,15 @@ This is your home base. The usage box shows how much of your free plan you've us
 - **Network transfer** is the delivery truck: data moving between Neon and you.
 - **History** is a backup of recent changes, so Neon can restore your data if something goes wrong.
 
+*Note: you won't have the yellow banner saying a project was deleted.*
+
+<img src="https://colony-recorder.s3.us-west-1.amazonaws.com/files/2026-11-16/47493e3e-6029-45ba-bce4-45185f1ab94f/user_cropped_screenshot_e9fdab9996a243c2a0fc3b83bf0b72aa_text_export.jpeg" width="560" alt="Neon console home showing free plan usage and no projects">
+
 ### 2. Click **Create project**
 
 You'll see "You currently have no projects." That's what we're fixing.
+
+<img src="https://colony-recorder.s3.us-west-1.amazonaws.com/files/2026-11-16/2d62e113-93ef-4e1d-a178-3ffea08645f4/action-483e6a3af8234df8884bbce589414d68_2512f15ff58045c1bd10f2bdab1a553e_text_export.jpeg" width="560" alt="Create project button in the Neon console">
 
 ### 3. Name your project and check the settings
 
@@ -40,13 +46,21 @@ You'll see "You currently have no projects." That's what we're fixing.
 - **Services:** leave **Postgres database** on and everything else off.
 - **Free plan:** includes 1 GB of storage and a database that **scales to zero** (goes to sleep) when you're not using it.
 
+<img src="https://colony-recorder.s3.us-west-1.amazonaws.com/files/2026-11-16/27899cc4-9c24-4a52-bcdf-4ebe3a3eab12/action-b44c5b63d9274206b9fc5f235dfb6f94_cd99206398b843058cdcea1a54e3a7dc_text_export.jpeg" width="560" alt="Project name, region, and services settings">
+
 ### 4. Click **Create project**, then **Go to project**
+
+<img src="https://colony-recorder.s3.us-west-1.amazonaws.com/files/2026-11-16/3ca86712-e6d2-4575-b7f0-dc80ad35c77c/action-f488392e38394971b2613990e61824ee_079aa3615d764a649b25400a45a68936_text_export.jpeg" width="560" alt="Create project button at the bottom of the settings form">
+
+<img src="https://colony-recorder.s3.us-west-1.amazonaws.com/files/2026-11-16/3ef1c30b-cd32-4317-bc21-349b6fabcbf0/action-88f19fd70c7841c69a4971e362ea3974_54939c4d69b74ec4be112132fd27a376_text_export.jpeg" width="560" alt="Go to project button">
 
 ### 5. Check your Branch overview
 
 - **Branch: production.** A branch is a copy of your database that businesses use to test changes safely. We'll do all our work on production.
 - **Postgres database:** *1 database, 1 compute*, one place to store data and one engine to run queries.
 - **Right panel:** confirm your project name, **AWS US East 2 (Ohio)**, and **Free plan**.
+
+<img src="https://colony-recorder.s3.us-west-1.amazonaws.com/files/2026-11-17/8ab6e477-4ead-451a-a99b-4f23116ac7a3/user_cropped_screenshot_c516adac84e14e84a6a2ca2b551b22c8_text_export.jpeg" width="560" alt="Branch overview for the new project">
 
 ---
 
@@ -57,13 +71,19 @@ You've been querying tables all semester. Now you get to see where those tables 
 <details open>
 <summary><strong>Postgres database → Tables</strong></summary>
 
-This screen shows how a database is organized, from biggest to smallest:
+In the left menu, click **Postgres database**. This opens the database itself, where your tables, data, and tools are kept.
+
+<img src="https://colony-recorder.s3.us-west-1.amazonaws.com/files/2026-11-17/007ad0bb-6ce0-43d0-b802-ec9b221cada9/user_cropped_screenshot_7a8108d0a5d2426194c29da5826c15f7_text_export.jpeg" width="560" alt="Postgres database in the left menu">
+
+Then click **Tables**. This screen shows how a database is organized, from biggest to smallest:
 
 - **Database (`neondb`):** the whole storage space for your project.
 - **Schema (`public`):** a folder inside the database that groups related tables.
 - **Tables:** where data lives, in rows and columns. Right now: **0 tables in public schema**.
 
 Skip the **Create table** button. We'll build tables with SQL so you can see how each one is put together.
+
+<img src="https://colony-recorder.s3.us-west-1.amazonaws.com/files/2026-11-16/1eb8d2bb-7a12-487b-b2b4-fd74a98c4b2c/action-ecd8dddfe2d841e88e67f2996aeac7ff_a10c9b9c6eaa47d4babfcd5f83ddb282_text_export.jpeg" width="560" alt="Tables screen showing neondb, public schema, and 0 tables">
 
 </details>
 
@@ -72,6 +92,8 @@ Skip the **Create table** button. We'll build tables with SQL so you can see how
 
 - **Restore from history:** roll your database back to any point in the past **6 hours**, like an "undo" button for your data.
 - **Create snapshot:** a saved copy of your database at one moment, like a photo before big changes.
+
+<img src="https://colony-recorder.s3.us-west-1.amazonaws.com/files/2026-11-16/4650cb35-0f54-458d-b140-531942f6db2c/action-7cc79fcac6544959a1fd5d59f1660498_2a89f61a5db549e09d9f2cbc138d7efd_text_export.jpeg" width="560" alt="Backup and Restore page">
 
 </details>
 
@@ -82,12 +104,16 @@ Skip the **Create table** button. We'll build tables with SQL so you can see how
 - **Size 0.25 ↔ 2 CU:** CU means **compute unit**. Neon **autoscales**: a little power for light work, more when a query needs it. Businesses pay for what they use.
 - **Read Replicas:** read-only copies so reports and dashboards (like the Tableau work coming up) don't slow down the database handling sales.
 
+<img src="https://colony-recorder.s3.us-west-1.amazonaws.com/files/2026-11-16/1861fbd9-d6ff-40da-b9b1-e9057a2a0659/action-e889d0c3bb524c99926895f2ebd5b220_b9a69f953c0d4c13b42d5cb9e0c0d4d1_text_export.jpeg" width="560" alt="Computes page showing the primary compute and autoscaling size">
+
 </details>
 
 <details>
 <summary><strong>Realtime</strong></summary>
 
 Realtime makes data **update live** in an app the moment it changes. For Second Chapter, a shopper could see an item marked "Sold" the second it's rung up. Leave this off.
+
+<img src="https://colony-recorder.s3.us-west-1.amazonaws.com/files/2026-11-16/732cde7b-fae5-4d5b-bb4e-fdbb055f5a9f/action-f4dad10e064c4448ae1152f7510bd9dc_552d5af4df824704aaf6e225a904826f_text_export.jpeg" width="560" alt="Realtime page with a live stock update example">
 
 </details>
 
@@ -98,12 +124,16 @@ An **API** lets other apps talk to your database over the internet. Think of a w
 
 Leave this off. Opening a database to the web is a big security decision.
 
+<img src="https://colony-recorder.s3.us-west-1.amazonaws.com/files/2026-11-16/8fbd981f-888f-4b96-a0aa-421f3be77977/action-14ab0488588841018fb4e6d62b91f61b_7fe97e91fb8f48ff85103e0bd65e12f8_text_export.jpeg" width="560" alt="Data API page">
+
 </details>
 
 <details>
 <summary><strong>Roles</strong></summary>
 
 A **role** is a user account inside the database, with **permissions** that control what it can do. **neondb_owner** owns `neondb` and can do everything; it's who you are in the SQL Editor. At Second Chapter, a cashier role might only record sales, while a manager role can also update prices.
+
+<img src="https://colony-recorder.s3.us-west-1.amazonaws.com/files/2026-11-16/8856526d-54a4-4cc0-91c2-13add26eb334/action-e30f50ead23d4aa4bff0dac2fd907b56_282d5ec1e4cd4a088d16fdf4629642a0_text_export.jpeg" width="560" alt="Roles page showing neondb_owner">
 
 </details>
 
@@ -112,12 +142,16 @@ A **role** is a user account inside the database, with **permissions** that cont
 
 Your project has one database, **neondb**, owned by **neondb_owner**. That's how roles and databases connect. A business might keep sales in one database and employee records in another; we only need `neondb`.
 
+<img src="https://colony-recorder.s3.us-west-1.amazonaws.com/files/2026-11-16/eb61e3c1-be67-43d3-8377-db6d808ff857/action-4f58ae9180204cb6ac3d576a408d4003_8f95aca4d0b942f29b9fb3d76e5046b2_text_export.jpeg" width="560" alt="Databases page listing neondb">
+
 </details>
 
 <details>
 <summary><strong>Data masking</strong></summary>
 
 Businesses often share data with analysts without exposing **PII** (personally identifiable information) like names, phone numbers, and addresses. Masking swaps real values for `*****` so the data keeps its shape but can't be traced to a customer. The Second Chapter customer rewards table would be a good candidate before sharing with a marketing team. Just looking today.
+
+<img src="https://colony-recorder.s3.us-west-1.amazonaws.com/files/2026-11-16/dc0c821f-55d1-475c-ab41-6f4774cf6cd0/action-a42988f3c5b24260b4b0db7b6ea4b0bc_40696246ffa64e5badc682f463c54915_text_export.jpeg" width="560" alt="Data masking page showing masked ZIP codes">
 
 </details>
 
@@ -126,6 +160,8 @@ Businesses often share data with analysts without exposing **PII** (personally i
 ## Part 3: Build the tables
 
 In the left menu, click **SQL Editor**. This is where you'll write and run SQL, much like DataLab but connected to your own database. **Primary – Active** at the top means your compute is awake, and **neondb** shows which database your SQL runs against.
+
+<img src="https://colony-recorder.s3.us-west-1.amazonaws.com/files/2026-11-16/41dc1d5b-ef08-4c21-96a2-08f465d0e94a/action-93c95ab6795e4200a3c66acccca08767_63efe5c22cd84930a01990337bfe020c_text_export.jpeg" width="560" alt="Neon SQL Editor with sample code">
 
 > **Before you start:** Neon puts sample code in the editor. Select all of it and delete it. If you already clicked Run on the sample, that's okay; it made a practice table you'll clear in the [Start over](#start-over--troubleshooting) section.
 
