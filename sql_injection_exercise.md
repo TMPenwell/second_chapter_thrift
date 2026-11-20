@@ -81,10 +81,7 @@ SELECT * FROM points_lookup_unsafe('740-555-6045');
 
 ## Step 3: Someone types something sneaky
 
-This time, someone types this into the phone number box:
-
-```
-x' OR '1'='1
+This time, someone types **x' OR '1'='1** into the phone number box. (Don't run that. It's just what they typed. You'll run the SQL block below.)
 ```
 
 **About the `$$` marks:** they're just how we hand Neon the exact characters someone typed, quote marks and all. On the real website, there'd be no `$$`. The person would only type what's between them.
